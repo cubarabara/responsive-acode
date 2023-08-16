@@ -9,7 +9,9 @@ class AcodePlugin {
 
     async init($page) {
         selectionMenu.add(this.run.bind(this), 'Hi', 'all');
+        // editorManager.
         editorManager.editor.commands.addCommand({
+            name: "test",
             description: "test",
             bindKey: {
                 win: "Ctrl-T"
@@ -26,7 +28,19 @@ class AcodePlugin {
         this.$style = tag('style', {
             textContent: style,
         })
+
+        this.$divWrapper = tag('div', {
+            className: 'wrapper',
+        })
+        
+        this.$iframeMobile = tag('iframe', {
+            className: 'iframeMobile',
+            src: "http://localhost:5173/"
+        })
+
         document.head.append(this.$style)
+        this.$page.append(this.$divWrapper)
+        this.$divWrapper.append(this.$iframeMobile)
     }
 
     async run() {

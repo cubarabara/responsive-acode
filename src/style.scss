@@ -1,3 +1,10 @@
-#acode-plugin-package-adder{
-    
+#acode-plugin-package-adder {
+    .wrapper {
+        width: 6000px;
+        
+        .iframeMobile {  // mobile version
+            width: "335";
+            height: "480";
+        }
+    }
 }
