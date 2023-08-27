@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Test 'html-tag-js'</title>
+    <script src="./dist/Ref.js"></script>
+    <script src="./dist/tag.js"></script>
+  </head>
+  <body>
+    <h1>HTML-TAG-JS</h1>
+    <div id="app"></div>
+
+    <script>
+      const p = new Ref();
+
+      p.style.display = 'block';
+      p.style.color = 'red';
+      p.style.width = '100px';
+      p.style.height = '100px';
+
+      app.append(
+        tag('button', {
+          textContent: 'This is a button',
+          onclick: () => {
+            p.textContent = 'The button was clicked';
+          },
+        }),
+        tag('p', {
+          ref: p,
+          textContent: 'This is a paragraph',
+          attr: {
+            data: undefined,
+          },
+        }),
+      );
+
+      p.style.backgroundColor = 'blue';
+
+      p.onref = (ref) => {
+        console.log(ref);
+      };
+      
+      document.querySelector("[name='viewport']").remove()
+    </script>
+  </body>
+</html>
