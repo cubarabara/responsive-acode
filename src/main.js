@@ -8,11 +8,11 @@ const toast = acode.require('toast');
 class AcodePlugin {
 
     async init($page) {
-        selectionMenu.add(this.run.bind(this), 'Hi', 'all');
+        selectionMenu.add(this.run.bind(this), 'Dubug', 'all');
         // editorManager.
         editorManager.editor.commands.addCommand({
-            name: "test",
-            description: "test",
+            name: "test1",
+            description: "Responsif",
             bindKey: {
                 win: "Ctrl-T"
             },
@@ -32,13 +32,17 @@ class AcodePlugin {
         this.$divWrapper = tag('div', {
             className: 'wrapper',
         })
-        
+
         this.$iframeMobile = tag('iframe', {
             className: 'iframeMobile',
-            src: "http://localhost:5173/"
+            src: "http://localhost:5173/",
+            width: "335",
+            height: "480"
         })
+        
+        document.head.append(this.$style);
+        document.head.querySelector("[name='viewport']").remove();
 
-        document.head.append(this.$style)
         this.$page.append(this.$divWrapper)
         this.$divWrapper.append(this.$iframeMobile)
     }
