@@ -7,5 +7,5 @@ setting -> plugin -> Responsive -> icon setting, on top right corner
 ## **How to use it?**
 1. Hold in editor text. **DEBUG**
 2. Open comment pallet Search **Responsive**.
-3. Run button on *Navbar**.
+3. Run button on **Navbar**.
 4. **Crtl-T**
