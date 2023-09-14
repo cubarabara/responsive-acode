@@ -1,5 +1,5 @@
-# Acode plugin
+## **Responsive**
+Description: This tool makes it easier for you to build a Responsive website 
 
-> For typescript version of plugin template switch this repo to main-ts
-
-Read acode plugin [documentation](https://acode.foxdebug.com/plugin-docs) to develop plugin for acode editor.
+## **How to setting ip**
+setting -> plugin -> Responsive -> icon setting, on top right corner 
