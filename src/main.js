@@ -85,17 +85,33 @@ class AcodePlugin {
       }
    }
 
+   get settingIp() {
+      return {
+         list: [
+            {
+               key: 'Url',
+               text: 'URL',
+               prompt: 'Enter url',
+               promptType: 'text',
+            }
+         ]
+      }
+   }
 }
 
 if (window.acode) {
    const acodePlugin = new AcodePlugin();
-   acode.setPluginInit(plugin.id, async (baseUrl, $page, { cacheFileUrl, cacheFile }) => {
-      if (!baseUrl.endsWith('/')) {
-         baseUrl += '/';
-      }
-      acodePlugin.baseUrl = baseUrl;
-      await acodePlugin.init($page, cacheFile, cacheFileUrl);
-   });
+   acode.setPluginInit(
+      plugin.id,
+      async (baseUrl, $page, { cacheFileUrl, cacheFile }) => {
+         if (!baseUrl.endsWith("/")) {
+            baseUrl += "/";
+         }
+         acodePlugin.baseUrl = baseUrl;
+         await acodePlugin.init($page, cacheFile, cacheFileUrl);
+      },
+      acodePlugin.settingIp,
+   );
    acode.setPluginUnmount(plugin.id, () => {
       acodePlugin.destroy();
    });
