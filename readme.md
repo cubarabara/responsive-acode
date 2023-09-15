@@ -8,3 +8,5 @@ Description: This tool makes it easier for you to build a Responsive website
 3. Crtl-T.
 4. open command pallete Search "Responsive".
 ```
+
+**Bug report:** if you find a bug [here!](https://github.com/cubarabara/Responsive)
