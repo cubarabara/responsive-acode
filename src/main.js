@@ -4,6 +4,7 @@ import tag from 'html-tag-js';
 
 const selectionMenu = acode.require('selectionMenu');
 const toast = acode.require('toast');
+const prompt = acode.require('prompt');
 
 class AcodePlugin {
 
@@ -43,7 +44,6 @@ class AcodePlugin {
 
       this.$iframeMobile = tag('iframe', {
          className: 'iframeMobile',
-         src: "http://localhost:5173/",
          width: "335",
          height: "480"
       })
@@ -60,8 +60,17 @@ class AcodePlugin {
    }
 
    async run() {
-      this.$page.show();
       window.toast('Hello, World!', 3000);
+      const result = await prompt('Enter Url', '', 'text', {
+         required: true,
+         placeholder: 'Url',
+      });
+
+      if (result) {
+         this.$iframeMobile.src = result;
+         this.$page.show();
+         console.log(result)
+      }
    }
 
    async destroy() {
@@ -84,33 +93,18 @@ class AcodePlugin {
          $header.insertBefore(this.$runBtn, $header.lastChild);
       }
    }
-
-   get settingIp() {
-      return {
-         list: [
-            {
-               key: 'Url',
-               text: 'URL',
-               prompt: 'Enter url',
-               promptType: 'text',
-            }
-         ]
-      }
-   }
 }
 
 if (window.acode) {
    const acodePlugin = new AcodePlugin();
    acode.setPluginInit(
-      plugin.id,
-      async (baseUrl, $page, { cacheFileUrl, cacheFile }) => {
-         if (!baseUrl.endsWith("/")) {
-            baseUrl += "/";
+      plugin.id, async (baseUrl, $page, { cacheFileUrl, cacheFile }) => {
+         if (!baseUrl.endsWith('/')) {
+            baseUrl += '/';
          }
          acodePlugin.baseUrl = baseUrl;
          await acodePlugin.init($page, cacheFile, cacheFileUrl);
-      },
-      acodePlugin.settingIp,
+      }
    );
    acode.setPluginUnmount(plugin.id, () => {
       acodePlugin.destroy();
