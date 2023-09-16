@@ -60,7 +60,6 @@ class AcodePlugin {
    }
 
    async run() {
-      window.toast('Hello, World!', 3000);
       const result = await prompt('Enter Url', '', 'text', {
          required: true,
          placeholder: 'Url',
@@ -69,7 +68,6 @@ class AcodePlugin {
       if (result) {
          this.$iframeMobile.src = result;
          this.$page.show();
-         console.log(result)
       }
    }
 
