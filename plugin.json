@@ -1,6 +1,6 @@
 {
    "id": "cubarabara.responsive",
-   "name": "Responsive",
+   "name": "Responsive tools",
    "main": "dist/main.js",
    "version": "1.0.0",
    "readme": "readme.md",
