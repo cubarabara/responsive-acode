@@ -1,10 +1,18 @@
 #acode-plugin-package-adder {
-    .wrapper {
-        width: 600px;
-        
-        .iframeMobile {
-            // mobile version
-            border: 2px solid pink;
-        }
-    }
+   overflow-x: scroll;
+   background: #713ABE;
+
+   .wrapper {
+      width: 5640px;
+      overflow-y: scroll;
+      transform: scale(0.25);
+      transform-origin: 0 0;
+      background: #219C90;
+      
+      iframe {
+         border: 2px solid pink;
+         margin: 0 25px 20px 0;
+         float: left;
+      }
+   }
 }
