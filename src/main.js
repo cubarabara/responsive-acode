@@ -97,15 +97,18 @@ class AcodePlugin {
       this.checkRunnable();
       editorManager.on('switch-file', this.checkRunnable.bind(this));
       editorManager.on('rename-file', this.checkRunnable.bind(this));
-      document.head.append(this.$style);
 
       // remove and reset zoom, use the back arrow 
-      $page.querySelector(".arrow_back").onclick = () => {
+      $page.querySelector(".arrow_back").addEventListener("click", () => {
+         document.querySelector("[name='viewport']").setAttribute("content", " width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
+         $page.remove();
+      })
+      
+      document.addEventListener("backbutton", onBackKeyDown); 
+      function onBackKeyDown() {
          document.querySelector("[name='viewport']").setAttribute("content", " width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
          $page.remove();
       }
-      
-      
    }
 
    async run() {
@@ -113,8 +116,8 @@ class AcodePlugin {
          required: true,
          placeholder: 'Url',
       });
-      
-      // set src
+
+      // set src iframe
       if (result) {
          this.$page.show();
 

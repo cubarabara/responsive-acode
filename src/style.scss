@@ -1,18 +1,16 @@
 #responsiveTools {
    overflow-x: scroll;
-   background: #713ABE;
-
+   background: var(--primary-color);
+   
    .wrapper {
-      width: 4990px;
+      width: 5100px;
       overflow-y: scroll;
       transform: scale(0.25);
       transform-origin: 0 0;
-      background: #219C90;
       
       iframe {
-         // display: none;
          border: 2px solid pink;
-         margin: 30px 25px 20px 0;
+         margin: 30px 25px 20px 30px;
          float: left;
       }
    }
