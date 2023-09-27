@@ -16,6 +16,7 @@
       "html-tag-js": "^1.1.41",
       "jszip": "^3.10.1",
       "live-server": "^1.2.2",
+      "pinch-zoom-js": "^2.3.5",
       "postcss-loader": "^7.3.3",
       "raw-loader": "^4.0.2",
       "sass": "^1.65.1",

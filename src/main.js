@@ -21,7 +21,7 @@ class AcodePlugin {
       });
 
       // Initialising $page for plugin
-      $page.id = 'acode-plugin-package-adder';
+      $page.id = "responsiveTools";
       $page.settitle("Responsive");
       this.$page = $page;
 
@@ -38,7 +38,7 @@ class AcodePlugin {
          textContent: style,
       });
 
-      this.$divWrapper = tag('div', {
+      this.$wrapper = tag('div', {
          className: 'wrapper',
       });
 
@@ -85,24 +85,27 @@ class AcodePlugin {
       });
 
       document.head.append(this.$style);
-      //document.head.querySelector("[name='viewport']").setAttribute("content", "width=1024, height=768");
-      /*document.addEventListener("DOMContentLoaded", function () {
-         document.henquerySelector("[name='viewport']").setAttribute("content", "width=1024, height=768");
-      });*/
+      this.$page.append(this.$wrapper)
 
-      this.$page.append(this.$divWrapper)
-
-      this.$divWrapper.append(this.$iframeMobile)
-      this.$divWrapper.append(this.$iframeSmallTablet)
-      this.$divWrapper.append(this.$iframeMediumTablet)
-      this.$divWrapper.append(this.$iframeTabletPortrait)
-      this.$divWrapper.append(this.$iframeTabletLandscape)
-      this.$divWrapper.append(this.$iframeDesktop)
+      this.$wrapper.append(this.$iframeMobile)
+      this.$wrapper.append(this.$iframeSmallTablet)
+      this.$wrapper.append(this.$iframeMediumTablet)
+      this.$wrapper.append(this.$iframeTabletPortrait)
+      this.$wrapper.append(this.$iframeTabletLandscape)
+      this.$wrapper.append(this.$iframeDesktop)
 
       this.checkRunnable();
       editorManager.on('switch-file', this.checkRunnable.bind(this));
       editorManager.on('rename-file', this.checkRunnable.bind(this));
       document.head.append(this.$style);
+
+      // remove and reset zoom, use the back arrow 
+      $page.querySelector(".arrow_back").onclick = () => {
+         document.querySelector("[name='viewport']").setAttribute("content", " width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
+         $page.remove();
+      }
+      
+      
    }
 
    async run() {
@@ -110,7 +113,8 @@ class AcodePlugin {
          required: true,
          placeholder: 'Url',
       });
-
+      
+      // set src
       if (result) {
          this.$page.show();
 
@@ -120,19 +124,18 @@ class AcodePlugin {
          this.$iframeTabletPortrait.src = result;
          this.$iframeTabletLandscape.src = result;
          this.$iframeDesktop.src = result;
-         document.head.querySelector("[name='viewport']").setAttribute("content", "width=device-width, initial-scale=1.0");
+
+         document.querySelector("[name='viewport']").setAttribute("content", "width=1024, height=768");
       }
    }
 
-   async destroy(e) {
+   async destroy() {
       if (this.$runBtn) {
          this.$runBtn.onclick = null;
          this.$runBtn.remove();
       }
       editorManager.off('switch-file', this.checkRunnable.bind(this));
       editorManager.off('rename-file', this.checkRunnable.bind(this));
-      
-      console.log(e)
    }
 
    checkRunnable() {
