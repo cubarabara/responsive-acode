@@ -10,3 +10,7 @@ Description: This tool makes it easier for you to build a Responsive website
 ```
 
 **Bug report:** if you find a bug [here!](https://github.com/cubarabara/Responsive-tools-acode)
+
+## Feature
+* zoom in and zoom out
+* support node.js
