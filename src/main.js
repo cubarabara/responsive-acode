@@ -1,3 +1,5 @@
+/*v2.1.11*/
+
 import plugin from '../plugin.json';
 import style from './style.scss';
 import tag from 'html-tag-js';
