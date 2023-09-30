@@ -1,4 +1,4 @@
-/*v2.1.11*/
+/*v2.0.0*/
 
 import plugin from '../plugin.json';
 import style from './style.scss';
