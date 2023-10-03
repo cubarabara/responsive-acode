@@ -1,6 +1,6 @@
 {
    "name": "responsive-tools",
-   "version": "1.0.1",
+   "version": "2.2.0",
    "description": "This tool makes it easier for you to build a Responsive website",
    "main": "dist/main.js",
    "repository": "https://github.com/cubarabara/responsive-acode",
