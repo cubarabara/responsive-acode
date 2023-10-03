@@ -40,61 +40,12 @@ class AcodePlugin {
          textContent: style,
       });
 
-      this.$wrapper = tag('div', {
-         className: 'wrapper',
-      });
-
-      // Mobile 1
-      this.$iframeMobile = tag('iframe', {
-         className: 'iframeMobile',
-         width: "355",
-         height: "480"
-      });
-
-      // small tablet 2
-      this.$iframeSmallTablet = tag('iframe', {
-         className: 'iframeMobile',
-         width: "480",
-         height: "640"
-      });
-
-      // medium tablet 3
-      this.$iframeMediumTablet = tag('iframe', {
-         className: 'iframeMobile',
-         width: "665",
-         height: "920"
-      });
-
-      // tablet portrait 4
-      this.$iframeTabletPortrait = tag('iframe', {
-         className: 'iframeMobile',
-         width: "995",
-         height: "1024"
-      });
-
-      // tablet landscape 5
-      this.$iframeTabletLandscape = tag('iframe', {
-         className: 'iframeMobile',
-         width: "1024",
-         height: "768"
-      });
-
-      // desktop 6
-      this.$iframeDesktop = tag('iframe', {
-         className: 'iframeMobile',
-         width: "1200",
-         height: "800"
+      this.$container = tag('div', {
+         className: 'container',
       });
 
       document.head.append(this.$style);
-      this.$page.append(this.$wrapper)
-
-      this.$wrapper.append(this.$iframeMobile)
-      this.$wrapper.append(this.$iframeSmallTablet)
-      this.$wrapper.append(this.$iframeMediumTablet)
-      this.$wrapper.append(this.$iframeTabletPortrait)
-      this.$wrapper.append(this.$iframeTabletLandscape)
-      this.$wrapper.append(this.$iframeDesktop)
+      this.$page.append(this.$container)
 
       this.checkRunnable();
       editorManager.on('switch-file', this.checkRunnable.bind(this));
@@ -122,14 +73,6 @@ class AcodePlugin {
       // set src iframe
       if (result) {
          this.$page.show();
-
-         this.$iframeMobile.src = result;
-         this.$iframeSmallTablet.src = result;
-         this.$iframeMediumTablet.src = result;
-         this.$iframeTabletPortrait.src = result;
-         this.$iframeTabletLandscape.src = result;
-         this.$iframeDesktop.src = result;
-
          document.querySelector("[name='viewport']").setAttribute("content", "width=1024, height=768");
       }
    }

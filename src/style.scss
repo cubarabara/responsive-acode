@@ -2,16 +2,8 @@
    overflow-x: scroll;
    background: var(--primary-color);
    
-   .wrapper {
-      width: 5100px;
-      overflow-y: scroll;
+   .container {
       transform: scale(0.25);
       transform-origin: 0 0;
-      
-      iframe {
-         border: 2px solid pink;
-         margin: 30px 25px 20px 30px;
-         float: left;
-      }
    }
 }
