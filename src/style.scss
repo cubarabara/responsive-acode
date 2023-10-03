@@ -1,9 +1,9 @@
 #responsiveTools {
-   overflow-x: scroll;
-   background: var(--primary-color);
-   
    .container {
       transform: scale(0.25);
       transform-origin: 0 0;
+      background: pink;
+      width: 100vh;
+      height: 100vh;
    }
 }

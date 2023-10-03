@@ -43,9 +43,22 @@ class AcodePlugin {
       this.$container = tag('div', {
          className: 'container',
       });
+      
+      this.$navbar = tag('div', {
+         className: 'navbar',
+      });
+      
+      this.$iframes = tag('div', {
+         className: 'iframes',
+      });
 
       document.head.append(this.$style);
+      
       this.$page.append(this.$container)
+      this.$container.append(this.$navbar)
+      
+      this.$page.append(this.$iframes)
+      
 
       this.checkRunnable();
       editorManager.on('switch-file', this.checkRunnable.bind(this));

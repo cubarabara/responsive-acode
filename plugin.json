@@ -2,7 +2,7 @@
    "id": "cubarabara.responsive",
    "name": "Responsive tools",
    "main": "dist/main.js",
-   "version": "2.1.11",
+   "version": "2.2.0",
    "readme": "readme.md",
    "icon": "icon.png",
    "files": [],
