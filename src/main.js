@@ -55,9 +55,9 @@ class AcodePlugin {
       document.head.append(this.$style);
       
       this.$page.append(this.$container)
-      this.$container.append(this.$navbar)
       
-      this.$page.append(this.$iframes)
+      this.$container.append(this.$navbar)
+      this.$container.append(this.$iframes)
       
 
       this.checkRunnable();
