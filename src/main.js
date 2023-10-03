@@ -44,20 +44,42 @@ class AcodePlugin {
          className: 'container',
       });
       
+      
       this.$navbar = tag('div', {
          className: 'navbar',
       });
+      
+      this.$mobile = tag('div', {
+         className: 'mobile',
+      });
+      
+      this.$tablet = tag('div', {
+         className: 'tablet',
+      });
+      
+      this.$desktop = tag('div', {
+         className: 'desktop',
+      });
+      
+      this.$customScreen = tag('div', {
+         className: 'customScreen',
+      });
+      
       
       this.$iframes = tag('div', {
          className: 'iframes',
       });
 
       document.head.append(this.$style);
+      this.$page.append(this.$container);
       
-      this.$page.append(this.$container)
+      this.$container.append(this.$navbar);
+      this.$navbar.append(this.$mobile);
+      this.$navbar.append(this.$tablet);
+      this.$navbar.append(this.$desktop);
+      this.$navbar.append(this.$customScreen);
       
-      this.$container.append(this.$navbar)
-      this.$container.append(this.$iframes)
+      this.$container.append(this.$iframes);
       
 
       this.checkRunnable();
