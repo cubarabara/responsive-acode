@@ -66,22 +66,48 @@ class AcodePlugin {
       });
       
       
-      this.$iframes = tag('div', {
-         className: 'iframes',
+      /*menu mobile*/
+      this.$iconMenuMobile = tag('div', {
+         className: 'icon-menu-mobile',
       });
+      
+      this.$iconMobile = tag('div', {
+         className: 'icon-mobile',
+      });
+      
+      this.$iconText = tag('div', {
+         className: 'icon-text-mobile',
+         textContent:'MOBILE'
+      });
+      
+      this.$menuMobile = tag('div', {
+         className: 'menu-mobile',
+      });
+      
+      
+      /*this.$iframes = tag('div', {
+         className: 'iframes',
+      });*/
 
       document.head.append(this.$style);
       this.$page.append(this.$container);
-      
       this.$container.append(this.$navbar);
+      
       this.$navbar.append(this.$mobile);
       this.$navbar.append(this.$tablet);
       this.$navbar.append(this.$desktop);
       this.$navbar.append(this.$customScreen);
       
-      this.$container.append(this.$iframes);
+      /*menu mobile*/
+      this.$mobile.append(this.$iconMenuMobile);
+      this.$iconMenuMobile.append(this.$iconMobile);
+      this.$iconMenuMobile.append(this.$iconText);
       
-
+      this.$mobile.append(this.$menuMobile);
+      
+      
+      // this.$container.append(this.$iframes);
+      
       this.checkRunnable();
       editorManager.on('switch-file', this.checkRunnable.bind(this));
       editorManager.on('rename-file', this.checkRunnable.bind(this));
