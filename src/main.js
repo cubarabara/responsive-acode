@@ -51,6 +51,9 @@ class AcodePlugin {
       
       this.$mobile = tag('div', {
          className: 'mobile',
+         child: tag('div', {
+            className: 'p',
+         }),
       });
       
       this.$tablet = tag('div', {
