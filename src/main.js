@@ -50,43 +50,104 @@ class AcodePlugin {
       });
       
       this.$mobile = tag('div', {
-         className: 'mobile',
-         child: tag('div', {
-            className: 'p',
-         }),
+         className: 'mobile menu',
+         children: [
+            tag('div', {
+               className: 'icon-mobile',
+               children: [
+                  tag('div', {
+                     className: 'icon-menu-mobile',
+                     child: tag('img', {
+                        className: 'icon-img',
+                        src: 'https://github.com/cubarabara/Icon/assets/36744420/d3f63798-2b73-4b79-b2b7-0538c8b48438',
+                     })
+                  }),
+                  tag('div', {
+                     className: 'icon-text-mobile icon-text',
+                     textContent: 'MOBILE'
+                  }),
+               ],
+            }),
+            tag('div', {
+               className: 'menu-mobile',
+            }),
+         ],
       });
       
       this.$tablet = tag('div', {
-         className: 'tablet',
+         className: 'tablet menu',
+         children: [
+            tag('div', {
+               className: 'icon-tablet',
+               children: [
+                  tag('div', {
+                     className: 'icon-menu-tablet',
+                     child: tag('img', {
+                        className: 'icon-img',
+                        src: 'https://github.com/cubarabara/Icon/assets/36744420/d15786e0-ee3f-43f5-b85b-5a00fc56ba4d',
+                     })
+                  }),
+                  tag('div', {
+                     className: 'icon-text-tablet icon-text',
+                     textContent: 'TABLET'
+                  }),
+               ],
+            }),
+            tag('div', {
+               className: 'menu-tablet',
+            }),
+         ],
       });
       
       this.$desktop = tag('div', {
-         className: 'desktop',
+         className: 'desktop menu',
+         children: [
+            tag('div', {
+               className: 'icon-desktop',
+               children: [
+                  tag('div', {
+                     className: 'icon-menu-desktop',
+                     child: tag('img', {
+                        className: 'icon-img',
+                        src: 'https://github.com/cubarabara/Icon/assets/36744420/f690e127-7cac-48ed-9b8f-aa2cb650db59',
+                     })
+                  }),
+                  tag('div', {
+                     className: 'icon-text-desktop icon-text',
+                     textContent: 'DESKTOP'
+                  }),
+               ],
+            }),
+            tag('div', {
+               className: 'menu-desktop',
+            }),
+         ],
       });
       
       this.$customScreen = tag('div', {
-         className: 'customScreen',
+         className: 'customScreen menu',
+         children: [
+            tag('div', {
+               className: 'icon-custom-screen',
+               children: [
+                  tag('div', {
+                     className: 'icon-menu-custom-screen',
+                     child: tag('img', {
+                        className: 'icon-img',
+                        src: 'https://github.com/cubarabara/Icon/assets/36744420/b7df6c90-0dcf-4def-b0cc-bd32ec0ab3e7',
+                     })
+                  }),
+                  tag('div', {
+                     className: 'icon-text-custom-screen icon-text',
+                     textContent: 'CUSTOM SCREEN'
+                  }),
+               ],
+            }),
+            tag('div', {
+               className: 'menu-custom-screen',
+            }),
+         ],
       });
-      
-      
-      /*menu mobile*/
-      this.$iconMenuMobile = tag('div', {
-         className: 'icon-menu-mobile',
-      });
-      
-      this.$iconMobile = tag('div', {
-         className: 'icon-mobile',
-      });
-      
-      this.$iconText = tag('div', {
-         className: 'icon-text-mobile',
-         textContent:'MOBILE'
-      });
-      
-      this.$menuMobile = tag('div', {
-         className: 'menu-mobile',
-      });
-      
       
       /*this.$iframes = tag('div', {
          className: 'iframes',
@@ -94,19 +155,13 @@ class AcodePlugin {
 
       document.head.append(this.$style);
       this.$page.append(this.$container);
-      this.$container.append(this.$navbar);
       
+      /* navbar */
+      this.$container.append(this.$navbar);
       this.$navbar.append(this.$mobile);
       this.$navbar.append(this.$tablet);
       this.$navbar.append(this.$desktop);
       this.$navbar.append(this.$customScreen);
-      
-      /*menu mobile*/
-      this.$mobile.append(this.$iconMenuMobile);
-      this.$iconMenuMobile.append(this.$iconMobile);
-      this.$iconMenuMobile.append(this.$iconText);
-      
-      this.$mobile.append(this.$menuMobile);
       
       
       // this.$container.append(this.$iframes);
