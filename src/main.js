@@ -44,7 +44,6 @@ class AcodePlugin {
          className: 'container',
       });
       
-      
       this.$navbar = tag('div', {
          className: 'navbar',
       });
@@ -119,7 +118,103 @@ class AcodePlugin {
                ],
             }),
             tag('div', {
-               className: 'menu-desktop',
+               className: 'menu-desktop menu-list',
+               
+               child: tag ('ul', {
+                  className: "list-menu-desktop",
+                  children: [
+                     tag('li', {
+                        className: '1',
+                        child: tag('a',{
+                           textContent: '10 Notebook',
+                           className: 'list',
+                           child: tag('span',{
+                              textContent: '1024x600',
+                           })
+                        })
+                     }),
+                     tag('li', {
+                        className: '2',
+                        child: tag('a',{
+                           textContent: '12 Netbook',
+                           className: 'list',
+                           child: tag('span',{
+                              textContent: '1024x768',
+                           })
+                        })
+                     }),
+                     tag('li', {
+                        className: '3',
+                        child: tag('a',{
+                           textContent: '13 Notebook',
+                           className: 'list',
+                           child: tag('span',{
+                              textContent: '1280x800',
+                           })
+                        })
+                     }),
+                     tag('li', {
+                        className: '4',
+                        child: tag('a',{
+                           textContent: '15 Notebook',
+                           className: 'list',
+                           child: tag('span',{
+                              textContent: '1366x768',
+                           })
+                        })
+                     }),
+                     tag('li', {
+                        className: '5',
+                        child: tag('a',{
+                           textContent: '19 Desktop',
+                           className: 'list',
+                           child: tag('span',{
+                              textContent: '1440x900',
+                           })
+                        })
+                     }),
+                     tag('li', {
+                        className: '6',
+                        child: tag('a',{
+                           textContent: '20 Desktop',
+                           className: 'list',
+                           child: tag('span',{
+                              textContent: '1600x900',
+                           })
+                        })
+                     }),
+                     tag('li', {
+                        className: '7',
+                        child: tag('a',{
+                           textContent: '22 Desktop',
+                           className: 'list',
+                           child: tag('span',{
+                              textContent: '1680x1050',
+                           })
+                        })
+                     }),
+                     tag('li', {
+                        className: '8',
+                        child: tag('a',{
+                           textContent: '23 Desktop',
+                           className: 'list',
+                           child: tag('span',{
+                              textContent: '1920x1080',
+                           })
+                        })
+                     }),
+                     tag('li', {
+                        className: '9',
+                        child: tag('a',{
+                           textContent: '24 Desktop',
+                           className: 'list',
+                           child: tag('span',{
+                              textContent: '1920x1200',
+                           })
+                        })
+                     }),
+                  ]
+               })
             }),
          ],
       });
@@ -184,9 +279,9 @@ class AcodePlugin {
    }
 
    async run() {
-      const result = await prompt('Enter Url', '', 'text', {
+      const result = await prompt('Enter URL', '', 'text', {
          required: true,
-         placeholder: 'Url',
+         placeholder: 'http://',
       });
 
       // set src iframe

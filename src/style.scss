@@ -2,6 +2,7 @@
    background: #fff;
    
    .navbar {
+      z-index: 1;
       position: absolute;
       width: 100%;
       height: 60px;
@@ -9,6 +10,7 @@
       float: right;
       display: flex;
    }
+   
    .menu {
       width: 93px;
       height: 54px;
@@ -33,10 +35,44 @@
 
    .icon-text {
       color: #A0A0A0;
-      white-space: nowrap;
       text-align: center;
       font-size: 8px;
    }
+   
+   /*menu list*/
+   .menu-list {
+      width: 130px;
+      position: absolute;
+      background: #fff;
+      top: 75px;
+      box-shadow: 0 0 13px rgba(0, 0, 0, .15)
+   }
+   
+   ul { 
+      list-style-type: none;
+   }
+   
+   li {
+      text-align: center;
+      margin-bottom: 10px;
+   }
+   
+   a span {
+      display: block;
+   }
+   
+   span {
+      color: #A0A0A0;
+   }
+   
+   a {
+      font-size: 10px;
+      color: black;
+   }
+   
+   /*.desktop-menu {
+      display: none;
+   }*/
    
    /*.iframes {
       position: absolute;
