@@ -67,9 +67,15 @@ class AcodePlugin {
                   }),
                ],
             }),
-            tag('div', {
-               className: 'menu-mobile',
-            }),
+            /*tag('div', {
+               className: 'menu-mobile menu-list',
+               child: tag('ul',{
+                  children: [
+                     
+                     
+                  ],
+               }),
+            }),*/
          ],
       });
       
@@ -93,7 +99,86 @@ class AcodePlugin {
                ],
             }),
             tag('div', {
-               className: 'menu-tablet',
+               className: 'menu-tablet menu-list',
+               child: tag('ul', {
+                  className: 'list-menu',
+                  children: [
+                     // ipad
+                     tag('li', {
+                        className:'dropdown',
+                        textContent: 'iPad',
+                        child: tag('ul', {
+                           children: [
+                              tag('li', {
+                                 child: tag('a', {
+                                    textContent: 'iPad mini',
+                                    child: tag('span', {
+                                       textContent: '768x1024',
+                                    }),
+                                 }),
+                              }),
+                              tag('li', {
+                                 child: tag('a', {
+                                    textContent: 'ipad mini',
+                                    child: tag('span', {
+                                       textContent: '768x1024',
+                                    }),
+                                 }),
+                              }),
+                              /*
+                              tag('li', {
+                                 child: tag('a', {
+                                    textContent: 'ipad mini',
+                                    child: tag('span', {
+                                       textContent: '768x1024',
+                                    }),
+                                 }),
+                              }),
+                              tag('li', {
+                                 child: tag('a', {
+                                    textContent: 'ipad mini',
+                                    child: tag('span', {
+                                       textContent: '768x1024',
+                                    }),
+                                 }),
+                              }),
+                              tag('li', {
+                                 child: tag('a', {
+                                    textContent: 'ipad mini',
+                                    child: tag('span', {
+                                       textContent: '768x1024',
+                                    }),
+                                 }),
+                              }),*/
+                           ],
+                        }),
+                     }),
+                     tag('li', {
+                        className:'dropdown',
+                        textContent: 'Nexus',
+                        
+                        child: tag('ul', {
+                           children: [
+                              tag('li', {
+                                 child: tag('a', {
+                                    textContent: 'Nexus 9',
+                                    child: tag('span', {
+                                       textContent: '768x1024',
+                                    }),
+                                 }),
+                              }),
+                           ],
+                        }),
+                     }),
+                     /*
+                     tag('li', {
+                        className:'dropdown',
+                     }),
+                     tag('li', {
+                        className:'dropdown',
+                     }),*/
+                  ],
+               }),
             }),
          ],
       });
@@ -121,7 +206,7 @@ class AcodePlugin {
                className: 'menu-desktop menu-list',
                
                child: tag ('ul', {
-                  className: "list-menu-desktop",
+                  className: "list-menu-desktop list-menu",
                   children: [
                      tag('li', {
                         className: '1',
@@ -269,13 +354,21 @@ class AcodePlugin {
       $page.querySelector(".arrow_back").addEventListener("click", () => {
          document.querySelector("[name='viewport']").setAttribute("content", " width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
          $page.remove();
-      })
+      });
       
       document.addEventListener("backbutton", onBackKeyDown); 
       function onBackKeyDown() {
          document.querySelector("[name='viewport']").setAttribute("content", " width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
          $page.remove();
       }
+      
+      /* open and close dropdown */
+      const submenuItems = $page.querySelectorAll('.dropdown');
+      submenuItems.forEach(item => {
+         item.addEventListener('click', function() {
+            this.classList.toggle('open');
+         });
+      });
    }
 
    async run() {

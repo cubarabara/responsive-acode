@@ -45,29 +45,53 @@
       position: absolute;
       background: #fff;
       top: 75px;
-      box-shadow: 0 0 13px rgba(0, 0, 0, .15)
+      box-shadow: 0 0 13px rgba(0, 0, 0, .15);
    }
    
    ul { 
       list-style-type: none;
    }
    
+   
    li {
-      text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 4px;
    }
    
    a span {
       display: block;
    }
    
+   a {
+      font-size: 12px;
+      color: black;
+      font-family: bold;
+   }
+   
    span {
       color: #A0A0A0;
    }
    
-   a {
-      font-size: 10px;
+   .list-menu-desktop li {
+      text-align: center;
+   }
+   
+   .list-menu {
+      margin-top: 10px;
+      margin-bottom: 10px;
+   }
+   
+   .dropdown {
       color: black;
+      font-size: 13px;
+   }
+   
+   .dropdown ul {
+      display: none;
+      text-align: center;
+   }
+   
+   .dropdown.open ul {
+      display: block;
    }
    
    /*.desktop-menu {
