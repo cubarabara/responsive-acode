@@ -1,4 +1,4 @@
-/*v2.2.0*/
+/*v2.2.0-beta*/
 
 import plugin from '../plugin.json';
 import style from './style.scss';
@@ -40,47 +40,53 @@ class AcodePlugin {
          textContent: style,
       });
 
-      this.$container = tag('div', {
-         className: 'container',
+      this.$navbar = tag('div', {
+         className: "navbar",
       });
       
-      this.$navbar = tag('div', {
-         className: 'navbar',
+      this.$hamburgerMenu = tag('input', {
+         className: "hamburgerMenu",
+         type: 'checkbox',
+      });
+      
+      this.$arrowBack = tag('span', {
+         className: "icon arrow_forward",
       });
       
       this.$iframes = tag('div', {
-         className: 'iframes',
+         className: "iframes",
       });
 
       document.head.append(this.$style);
-      
-      this.$page.append(this.$container)
-      
-      this.$container.append(this.$navbar)
-      this.$container.append(this.$iframes)
-      
+
+      this.$page.append(this.$navbar);
+      this.$navbar.append(this.$hamburgerMenu);
+      this.$page.append(this.$arrowBack);
+      this.$page.append(this.$iframes);
 
       this.checkRunnable();
       editorManager.on('switch-file', this.checkRunnable.bind(this));
       editorManager.on('rename-file', this.checkRunnable.bind(this));
 
       // remove and reset zoom, use the back arrow 
-      $page.querySelector(".arrow_back").addEventListener("click", () => {
+      $page.querySelector(".arrow_forward").addEventListener("click", () => {
          document.querySelector("[name='viewport']").setAttribute("content", " width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
          $page.remove();
       })
-      
-      document.addEventListener("backbutton", onBackKeyDown); 
+
+      document.addEventListener("backbutton", onBackKeyDown);
       function onBackKeyDown() {
          document.querySelector("[name='viewport']").setAttribute("content", " width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
          $page.remove();
       }
+      
+      $page.header.remove();
    }
 
    async run() {
       const result = await prompt('Enter Url', '', 'text', {
          required: true,
-         placeholder: 'Url',
+         placeholder: 'http://',
       });
 
       // set src iframe
