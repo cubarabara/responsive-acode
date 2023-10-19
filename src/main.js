@@ -106,69 +106,76 @@ class AcodePlugin {
                      // ipad
                      tag('li', {
                         className:'dropdown',
-                        textContent: 'iPad',
-                        child: tag('ul', {
-                           children: [
-                              tag('li', {
-                                 child: tag('a', {
-                                    textContent: 'iPad mini',
-                                    child: tag('span', {
-                                       textContent: '768x1024',
+                        children: [
+                           tag('label', {
+                              textContent: 'iPad',
+                           }),
+                           tag('ul', {
+                              children: [
+                                 tag('li', {
+                                    child: tag('a', {
+                                       textContent: 'iPad mini',
+                                       child: tag('span', {
+                                          textContent: '768x1024',
+                                       }),
                                     }),
                                  }),
-                              }),
-                              tag('li', {
-                                 child: tag('a', {
-                                    textContent: 'ipad mini',
-                                    child: tag('span', {
-                                       textContent: '768x1024',
+                                 tag('li', {
+                                    child: tag('a', {
+                                       textContent: 'ipad mini',
+                                       child: tag('span', {
+                                          textContent: '768x1024',
+                                       }),
                                     }),
                                  }),
-                              }),
-                              /*
-                              tag('li', {
-                                 child: tag('a', {
-                                    textContent: 'ipad mini',
-                                    child: tag('span', {
-                                       textContent: '768x1024',
+                                 /*
+                                 tag('li', {
+                                    child: tag('a', {
+                                       textContent: 'ipad mini',
+                                       child: tag('span', {
+                                          textContent: '768x1024',
+                                       }),
                                     }),
                                  }),
-                              }),
-                              tag('li', {
-                                 child: tag('a', {
-                                    textContent: 'ipad mini',
-                                    child: tag('span', {
-                                       textContent: '768x1024',
+                                 tag('li', {
+                                    child: tag('a', {
+                                       textContent: 'ipad mini',
+                                       child: tag('span', {
+                                          textContent: '768x1024',
+                                       }),
                                     }),
                                  }),
-                              }),
-                              tag('li', {
-                                 child: tag('a', {
-                                    textContent: 'ipad mini',
-                                    child: tag('span', {
-                                       textContent: '768x1024',
+                                 tag('li', {
+                                    child: tag('a', {
+                                       textContent: 'ipad mini',
+                                       child: tag('span', {
+                                          textContent: '768x1024',
+                                       }),
                                     }),
-                                 }),
-                              }),*/
-                           ],
-                        }),
+                                 }),*/
+                              ],
+                           }),
+                        ],
                      }),
                      tag('li', {
                         className:'dropdown',
-                        textContent: 'Nexus',
-                        
-                        child: tag('ul', {
-                           children: [
-                              tag('li', {
-                                 child: tag('a', {
-                                    textContent: 'Nexus 9',
-                                    child: tag('span', {
-                                       textContent: '768x1024',
+                        children: [
+                           tag('label', {
+                              textContent: 'Nexus',
+                           }),
+                           tag('ul', {
+                              children: [
+                                 tag('li', {
+                                    child: tag('a', {
+                                       textContent: 'Nexus 9',
+                                       child: tag('span', {
+                                          textContent: '768x1024',
+                                       }),
                                     }),
                                  }),
-                              }),
-                           ],
-                        }),
+                              ],
+                           }),
+                        ],
                      }),
                      /*
                      tag('li', {
@@ -366,9 +373,18 @@ class AcodePlugin {
       const submenuItems = $page.querySelectorAll('.dropdown');
       submenuItems.forEach(item => {
          item.addEventListener('click', function() {
-            this.classList.toggle('open');
+            this.classList.toggle('active');
          });
       });
+      
+      /*
+      const menu = $page.querySelectorAll('.menu');
+      menu.forEach(item => {
+         item.addEventListener('change', e => {
+            this.classList.toggle('active');
+         });
+      });
+      */
    }
 
    async run() {
