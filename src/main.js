@@ -42,17 +42,17 @@ class AcodePlugin {
 
       this.$navbar = tag('div', {
          className: "navbar",
+         children: [
+            tag("input", {
+               className: "menu-navbar hamburgerMenu",
+               type: 'checkbox',
+            }),
+            tag("span", {
+               className: "menu-navbar icon arrow_forward",
+            })
+         ],
       });
-      
-      this.$hamburgerMenu = tag('input', {
-         className: "hamburgerMenu",
-         type: 'checkbox',
-      });
-      
-      this.$arrowBack = tag('span', {
-         className: "icon arrow_forward",
-      });
-      
+
       this.$iframes = tag('div', {
          className: "iframes",
       });
@@ -60,8 +60,6 @@ class AcodePlugin {
       document.head.append(this.$style);
 
       this.$page.append(this.$navbar);
-      this.$navbar.append(this.$hamburgerMenu);
-      this.$page.append(this.$arrowBack);
       this.$page.append(this.$iframes);
 
       this.checkRunnable();
@@ -79,7 +77,7 @@ class AcodePlugin {
          document.querySelector("[name='viewport']").setAttribute("content", " width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
          $page.remove();
       }
-      
+
       $page.header.remove();
    }
 
