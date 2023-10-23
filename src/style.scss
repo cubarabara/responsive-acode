@@ -92,9 +92,113 @@
       background: #fff;
       position: absolute;
       box-shadow: 0 0 13px rgba(0, 0, 0, .15);
-      // left: -100%;
-      // transition: 0.8s;
-      // opacity: 0;
+      justify-content: center;
+      display: flex;
+      /*left: -100%;
+      transition: 0.8s;
+      opacity: 0;*/
+      
+      /* custom screen */
+      .custom-screen {
+         // border: 1px solid blue;
+         text-align: center;
+         margin-top: 10px;
+         margin-bottom: 10px;
+         
+         .input-width,
+         .input-height {
+            background-color: #F7F8F8;
+            border: none;
+            width: 200px;
+            height: 30px;
+            margin: 5px;
+            border-radius: 5px;
+            padding-left: 10px;
+            color: black;
+         }
+         
+         ::placeholder {
+            color: #bfbfbf;
+         }
+         
+         .btnApply {
+            background: #02B4DB;
+            border: none;
+            width: 150px;
+            height: 40px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-family: bold;
+         }
+      }
+      
+      .menu {
+         border: 1px solid pink;
+         width: 250px;
+         height: auto;
+         position: absolute;
+         top: 60px;
+         
+         /*ul {
+            list-style-type: none;
+         }
+         
+         
+         li {
+            margin-bottom: 6px;
+         }
+         
+         a span {
+            display: block;
+         }
+         
+         a {
+            font-size: 10px;
+            color: black;
+            font-family: bold;
+         }
+         
+         span {
+            color: #A0A0A0;
+         }
+         
+         .list-menu-desktop li {
+            text-align: center;
+         }
+         
+         .menu-list {
+            margin-top: 18px;
+            margin-bottom: 18px;
+         }
+         
+         .dropdown {
+            color: black;
+            font-size: 10px;
+         }
+         
+         .dropdown ul {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            
+            display: none;
+            transition: all 0.8s ease-in-out;
+            opacity: 0;
+         }
+         
+         .dropdown.active ul {
+            transition: all 0.8s ease-in-out;
+            display: block;
+            opacity: 1;
+         }
+         
+         label {
+            margin-left: 10px;
+            font-size: 13px;
+            font-family: bold;
+            margin-bottom: 10px;
+         }*/
+      }
    }
    
    /*.menu-slide.active {
@@ -103,10 +207,6 @@
       opacity: 1;
       box-shadow: 0 0 13px rgba(0, 0, 0, .15);
    }*/
-   
-   .menu {
-      border: 1px solid pink;
-   }
    
    /* .container {
       transform: scale(0.25);

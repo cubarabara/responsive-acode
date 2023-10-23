@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style type="text/css" media="all">
+      .menu-slide {
+         border: 1px solid pink;
+         width: 250px;
+         height: auto;
+      }
+      
+      .menu {
+         border: 1px solid blue;
+         text-align: center;
+         margin-top: 10px;
+         margin-bottom: 10px;
+         
+         .width,
+         .height {
+            background-color: #F7F8F8;
+            border: none;
+            width: 200px;
+            height: 30px;
+            margin: 5px;
+            border-radius: 5px;
+            padding-left: 10px;
+            /*color: black;*/
+         }
+         
+         ::placeholder {
+            color: #bfbfbf;
+         }
+         
+         #btn-apply {
+            background: #02B4DB;
+            border: none;
+            width: 150px;
+            height: 40px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-width: bold;
+         }
+      }
+      
+      .menu-list {
+         border: 1px solid green;
+         margin-bottom: 18px;
+         list-style-type: none;
+         
+         .drop-down {
+            border: 1px solid red;
+            padding: 0;
+         }
+         
+         ul {
+            border: 1px solid yellow;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <div class="menu-slide">
+      <div class="menu">
+         <input class="width" placeholder="width" />
+         <input class="height" placeholder="height" />
+         <button id="btn-apply">Apply</button>
+      </div>
+      <ul class="menu-list">
+      </ul>
+      
+   </div>
+</body>
+
+</html>

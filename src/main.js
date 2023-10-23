@@ -57,20 +57,27 @@ class AcodePlugin {
          className: "menu-slide",
          child: tag('div', {
             className: 'menu',
-            child: tag('ul', {
-               className: 'menu-list',
-               children: [
-                  tag('li', {
-                     className: 'dropdown',
-                  }),
-                  tag('li', {
-                     className: 'dropdown',
-                  }),
-                  tag('li', {
-                     className: 'dropdown',
-                  }),
-               ],
-            }),
+            children: [
+               tag('div', {
+                  className: 'custom-screen',
+                  children: [
+                     tag('input', {
+                        className: 'input-width',
+                        placeholder: 'width',
+                        type: 'number',
+                     }),
+                     tag('input', {
+                        className: 'input-height',
+                        placeholder: 'height',
+                        type: 'number',
+                     }),
+                     tag('button', {
+                        className: 'btnApply',
+                        textContent: 'Apply',
+                     }),
+                  ],
+               }),
+            ],
          }),
       });
 
@@ -104,9 +111,15 @@ class AcodePlugin {
 
       const toggelMenu = $page.querySelector(".hamburgerMenu");
       const menuSlide = $page.querySelector(".menu-slide");
-      toggelMenu.addEventListener("click", function() {
+      toggelMenu.addEventListener("click", function () {
          menuSlide.classList.toggle('active');
-         console.log("p");
+      });
+
+      const submenuItems = $page.querySelectorAll('.dropdown');
+      submenuItems.forEach(item => {
+         item.addEventListener('click', function () {
+            this.classList.toggle('active');
+         });
       });
    }
 
