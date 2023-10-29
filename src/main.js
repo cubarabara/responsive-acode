@@ -77,6 +77,127 @@ class AcodePlugin {
                      }),
                   ],
                }),
+               tag('ul', {
+                  className: 'menu-list',
+                  children: [
+                     tag('li', {
+                        className: 'dropdown',
+                        children: [
+                           tag('label', {
+                              textContent: 'MOBILE',
+                              className: 'label',
+                              child: tag('i', {
+                                 className: 'icon expand_more',
+                              }),
+                           }),
+                           tag('ul', {
+                              className: 'mobile',
+                              children: [
+                                 tag('li', {
+                                    className: 'dropdown',
+                                    children: [
+                                       tag('label', {
+                                          textContent: 'iPhone',
+                                          className: 'label',
+                                          child: tag('i', {
+                                             className: 'icon expand_more',
+                                          }),
+                                       }),
+                                       tag('ul', {
+                                          className: 'submenu',
+                                          children: [
+                                             tag('li', {
+                                                child: tag('label', {
+                                                   textContent: 'iPhone',
+                                                   className: 'ppp',
+                                                   child: tag('i', {
+                                                      textContent: '320x568',
+
+                                                   }),
+                                                }),
+                                             }),
+                                             tag('li', {
+                                                child: tag('label', {
+                                                   textContent: 'iPhone',
+                                                   className: 'ppp',
+                                                   child: tag('i', {
+                                                      textContent: '320x568',
+
+                                                   }),
+                                                }),
+                                             }),
+                                          ],
+                                       }),
+                                    ],
+                                 }),
+                                 tag('li', {
+                                    className: 'dropdown',
+                                    children: [
+                                       tag('label', {
+                                          textContent: 'Samsung',
+                                          className: 'label',
+                                          child: tag('i', {
+                                             className: 'icon expand_more',
+                                          }),
+                                       }),
+                                       tag('ul', {
+                                          className: 'submenu',
+                                          children: [
+                                             tag('li', {
+                                                child: tag('label', {
+                                                   textContent: 'iPhone',
+                                                   className: 'ppp',
+                                                   child: tag('i', {
+                                                      textContent: '320x568',
+
+                                                   }),
+                                                }),
+                                             }),
+                                             tag('li', {
+                                                child: tag('label', {
+                                                   textContent: 'iPhone',
+                                                   className: 'ppp',
+                                                   child: tag('i', {
+                                                      textContent: '320x568',
+
+                                                   }),
+                                                }),
+                                             }),
+                                          ],
+                                       }),
+                                    ],
+                                 }),
+                              ],
+                           }),
+                        ],
+                     }),
+                     tag('li', {
+                        className: 'dropdown',
+                        child: tag('label', {
+                           textContent: 'TABLET',
+                           className: 'label',
+                           child: tag('i', {
+                              className: 'icon expand_more',
+                           }),
+                        }),
+                     }),
+                     tag('li', {
+                        className: 'dropdown',
+                        children: [
+                           tag('label', {
+                              textContent: 'DESKTOP',
+                              className: 'label',
+                              child: tag('i', {
+                                 className: 'icon expand_more',
+                              }),
+                           }),
+                           tag('ul', {
+                              // className: 'desktop list',
+                           })
+                        ],
+                     }),
+                  ],
+               }),
             ],
          }),
       });
@@ -109,16 +230,42 @@ class AcodePlugin {
       /* remove header */
       $page.header.remove();
 
+      /* mavbar */
       const toggelMenu = $page.querySelector(".hamburgerMenu");
       const menuSlide = $page.querySelector(".menu-slide");
-      toggelMenu.addEventListener("click", function () {
+      toggelMenu.addEventListener("click", function() {
          menuSlide.classList.toggle('active');
       });
-
-      const submenuItems = $page.querySelectorAll('.dropdown');
-      submenuItems.forEach(item => {
-         item.addEventListener('click', function () {
-            this.classList.toggle('active');
+      
+      /*Custom Screen */
+      const customWidth = $page.querySelectorAll('.input-width');
+      const customHeight = $page.querySelectorAll('.input-height');
+      $page.querySelector(".btnApply").addEventListener("click", () => {
+         console.log("pp");
+      });
+      
+      /* drop Down */
+      const dropDown = $page.querySelectorAll('.dropdown');
+      dropDown.forEach(item => {
+         item.addEventListener('click', function (event) {
+            event.stopPropagation();
+            if (this.classList.contains('active')) {
+               this.classList.remove('active');
+            } else if (this.parentElement.parentElement.classList.contains('active')) {
+               if (this.classList.contains('active')) {
+                  this.classList.remove('active');
+               } else {
+                  Array.from(this.parentElement.children).forEach(itemMenu => {
+                     itemMenu.classList.remove('active');
+                  });
+                  this.classList.add('active')
+               }
+            } else {
+               dropDown.forEach(dropDownE => {
+                  dropDownE.classList.remove('active');
+               });
+               this.classList.add('active');
+            }
          });
       });
    }
