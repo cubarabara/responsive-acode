@@ -528,7 +528,9 @@ class AcodePlugin {
             /*remove menu slide*/
             toggelMenu.checked = false;
             menuSlide.classList.remove('active');
-            dropDown.classList.remove('active');
+            dropDown.forEach(removeDropDown => {
+               removeDropDown.classList.remove('active');
+            });
          }
       });
    }
