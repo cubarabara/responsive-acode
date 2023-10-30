@@ -112,7 +112,6 @@ class AcodePlugin {
                                                    className: 'ppp',
                                                    child: tag('i', {
                                                       textContent: '320x568',
-
                                                    }),
                                                 }),
                                              }),
@@ -167,19 +166,180 @@ class AcodePlugin {
                                        }),
                                     ],
                                  }),
+                                 tag('li', {
+                                    className: 'dropdown',
+                                    children: [
+                                       tag('label', {
+                                          textContent: 'One Plus',
+                                          className: 'label',
+                                          child: tag('i', {
+                                             className: 'icon expand_more',
+                                          }),
+                                       }),
+                                    ],
+                                 }),
+                                 tag('li', {
+                                    className: 'dropdown',
+                                    children: [
+                                       tag('label', {
+                                          textContent: 'LG',
+                                          className: 'label',
+                                          child: tag('i', {
+                                             className: 'icon expand_more',
+                                          }),
+                                       }),
+                                    ],
+                                 }),
+                                 tag('li', {
+                                    className: 'dropdown',
+                                    children: [
+                                       tag('label', {
+                                          textContent: 'Google Pixel',
+                                          className: 'label',
+                                          child: tag('i', {
+                                             className: 'icon expand_more',
+                                          }),
+                                       }),
+                                    ],
+                                 }),
+                                 tag('li', {
+                                    className: 'dropdown',
+                                    children: [
+                                       tag('label', {
+                                          textContent: 'Nexus',
+                                          className: 'label',
+                                          child: tag('i', {
+                                             className: 'icon expand_more',
+                                          }),
+                                       }),
+                                    ],
+                                 }),
+                                 tag('li', {
+                                    className: 'dropdown',
+                                    children: [
+                                       tag('label', {
+                                          textContent: 'Xiaomi',
+                                          className: 'label',
+                                          child: tag('i', {
+                                             className: 'icon expand_more',
+                                          }),
+                                       }),
+                                    ],
+                                 }),
                               ],
                            }),
                         ],
                      }),
                      tag('li', {
                         className: 'dropdown',
-                        child: tag('label', {
-                           textContent: 'TABLET',
-                           className: 'label',
-                           child: tag('i', {
-                              className: 'icon expand_more',
+                        children: [
+                           tag('label', {
+                              textContent: 'TABLET',
+                              className: 'label',
+                              child: tag('i', {
+                                 className: 'icon expand_more',
+                              }),
                            }),
-                        }),
+                           tag('ul', {
+                              className: 'mobile',
+                              children: [
+                                 tag('li', {
+                                    className: 'dropdown',
+                                    children: [
+                                       tag('label', {
+                                          textContent: 'iPad',
+                                          className: 'label',
+                                          child: tag('i', {
+                                             className: 'icon expand_more',
+                                          }),
+                                       }),
+                                       tag('ul', {
+                                          className: 'submenu',
+                                          children: [
+                                             tag('li', {
+                                                child: tag('label', {
+                                                   textContent: 'iPhone',
+                                                   className: 'ppp',
+                                                   child: tag('i', {
+                                                      textContent: '320x568',
+                                                   }),
+                                                }),
+                                             }),
+                                             tag('li', {
+                                                child: tag('label', {
+                                                   textContent: 'iPhone',
+                                                   className: 'ppp',
+                                                   child: tag('i', {
+                                                      textContent: '320x568',
+                                                   }),
+                                                }),
+                                             }),
+                                          ],
+                                       }),
+                                    ],
+                                 }),
+                                 tag('li', {
+                                    className: 'dropdown',
+                                    children: [
+                                       tag('label', {
+                                          textContent: 'Nexus',
+                                          className: 'label',
+                                          child: tag('i', {
+                                             className: 'icon expand_more',
+                                          }),
+                                       }),
+                                       tag('ul', {
+                                          className: 'submenu',
+                                          children: [
+                                             tag('li', {
+                                                child: tag('label', {
+                                                   textContent: 'iPhone',
+                                                   className: 'ppp',
+                                                   child: tag('i', {
+                                                      textContent: '320x568',
+                                                   }),
+                                                }),
+                                             }),
+                                             tag('li', {
+                                                child: tag('label', {
+                                                   textContent: 'iPhone',
+                                                   className: 'ppp',
+                                                   child: tag('i', {
+                                                      textContent: '320x568',
+                                                   }),
+                                                }),
+                                             }),
+                                          ],
+                                       }),
+                                    ],
+                                 }),
+                                 tag('li', {
+                                    className: 'dropdown',
+                                    children: [
+                                       tag('label', {
+                                          textContent: 'Samsung',
+                                          className: 'label',
+                                          child: tag('i', {
+                                             className: 'icon expand_more',
+                                          }),
+                                       }),
+                                    ],
+                                 }),
+                                 tag('li', {
+                                    className: 'dropdown',
+                                    children: [
+                                       tag('label', {
+                                          textContent: 'Chromebook',
+                                          className: 'label',
+                                          child: tag('i', {
+                                             className: 'icon expand_more',
+                                          }),
+                                       }),
+                                    ],
+                                 }),
+                              ],
+                           }),
+                        ],
                      }),
                      tag('li', {
                         className: 'dropdown',
@@ -192,8 +352,100 @@ class AcodePlugin {
                               }),
                            }),
                            tag('ul', {
-                              // className: 'desktop list',
-                           })
+                              className: 'submenu',
+                              children: [
+                                 tag('li', {
+                                    child: tag('label', {
+                                       textContent: '10 Netbook',
+                                       id: '10Netbook',
+                                       className: 'ppp',
+                                       child: tag('i', {
+                                          textContent: '1024x600',
+                                       }),
+                                    }),
+                                 }),
+                                 tag('li', {
+                                    child: tag('label', {
+                                       textContent: '12 Netbook',
+                                       id: '12Netbook',
+                                       className: 'ppp',
+                                       child: tag('i', {
+                                          textContent: '1024x768',
+                                       }),
+                                    }),
+                                 }),
+                                 tag('li', {
+                                    child: tag('label', {
+                                       textContent: '13 Notebook',
+                                       id: '13Notebook',
+                                       className: 'ppp',
+                                       child: tag('i', {
+                                          textContent: '1280x800',
+                                       }),
+                                    }),
+                                 }),
+                                 tag('li', {
+                                    child: tag('label', {
+                                       textContent: '15 Notebook',
+                                       id: '15Notebook',
+                                       className: 'ppp',
+                                       child: tag('i', {
+                                          textContent: '1366x768',
+                                       }),
+                                    }),
+                                 }),
+                                 tag('li', {
+                                    child: tag('label', {
+                                       textContent: '19 Desktop',
+                                       id: '19Desktop',
+                                       className: 'ppp',
+                                       child: tag('i', {
+                                          textContent: '1440x900',
+                                       }),
+                                    }),
+                                 }),
+                                 tag('li', {
+                                    child: tag('label', {
+                                       textContent: '20 Desktop',
+                                       id: '20Desktop',
+                                       className: 'ppp',
+                                       child: tag('i', {
+                                          textContent: '1600x900',
+                                       }),
+                                    }),
+                                 }),
+                                 tag('li', {
+                                    child: tag('label', {
+                                       textContent: '22 Desktop',
+                                       id: '22Desktop',
+                                       className: 'ppp',
+                                       child: tag('i', {
+                                          textContent: '1680x1050',
+                                       }),
+                                    }),
+                                 }),
+                                 tag('li', {
+                                    child: tag('label', {
+                                       textContent: '23 Desktop',
+                                       id: '23Desktop',
+                                       className: 'ppp',
+                                       child: tag('i', {
+                                          textContent: '1920x1080',
+                                       }),
+                                    }),
+                                 }),
+                                 tag('li', {
+                                    child: tag('label', {
+                                       textContent: '24 Desktop',
+                                       id: '24Desktop',
+                                       className: 'ppp',
+                                       child: tag('i', {
+                                          textContent: '1980x1200',
+                                       }),
+                                    }),
+                                 }),
+                              ],
+                           }),
                         ],
                      }),
                   ],
@@ -229,21 +481,15 @@ class AcodePlugin {
 
       /* remove header */
       $page.header.remove();
+      $page.style.overflowY = 'hidden';
 
       /* mavbar */
       const toggelMenu = $page.querySelector(".hamburgerMenu");
       const menuSlide = $page.querySelector(".menu-slide");
-      toggelMenu.addEventListener("click", function() {
+      toggelMenu.addEventListener("click", function () {
          menuSlide.classList.toggle('active');
       });
-      
-      /*Custom Screen */
-      const customWidth = $page.querySelectorAll('.input-width');
-      const customHeight = $page.querySelectorAll('.input-height');
-      $page.querySelector(".btnApply").addEventListener("click", () => {
-         console.log("pp");
-      });
-      
+
       /* drop Down */
       const dropDown = $page.querySelectorAll('.dropdown');
       dropDown.forEach(item => {
@@ -258,7 +504,7 @@ class AcodePlugin {
                   Array.from(this.parentElement.children).forEach(itemMenu => {
                      itemMenu.classList.remove('active');
                   });
-                  this.classList.add('active')
+                  this.classList.add('active');
                }
             } else {
                dropDown.forEach(dropDownE => {
@@ -268,6 +514,23 @@ class AcodePlugin {
             }
          });
       });
+
+      /*Custom Screen */
+      const customWidth = $page.querySelector('.input-width');
+      const customHeight = $page.querySelector('.input-height');
+      $page.querySelector(".btnApply").addEventListener("click", () => {
+         if (customWidth.value.trim() === "" || customHeight.value.trim() === "") {
+            window.toast('Width and Height cannot be empty', 3000);
+         } else {
+            /* clear input field */
+            customWidth.value = "";
+            customHeight.value = "";
+            /*remove menu slide*/
+            toggelMenu.checked = false;
+            menuSlide.classList.remove('active');
+            dropDown.classList.remove('active');
+         }
+      });
    }
 
    async run() {
@@ -275,7 +538,6 @@ class AcodePlugin {
          required: true,
          placeholder: 'http://',
       });
-
       // set src iframe
       if (result) {
          this.$page.show();
