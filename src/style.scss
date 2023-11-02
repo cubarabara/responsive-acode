@@ -7,6 +7,8 @@
       width: 100%;
       height: 30px;
       align-items: center;
+      // border: 1px solid red;
+      z-index: 20;
       
       .menu-navbar {
          display: inline-block;
@@ -17,13 +19,13 @@
          font-size: 25px;
          position: absolute;
          right: 10px;
-         z-index: 0;
+         z-index: 21;
       }
       
       /* hamburger menu */
       .hamburgerMenu {
          position: absolute;
-         z-index: 10;
+         z-index: 25;
          left: 10px;
          top: 6px;
          
@@ -88,14 +90,14 @@
    
    .menu-slide {
       width: 300px;
-      max-height: 100%;
+      height: 100vh;
       background: #fff;
       position: absolute;
       // box-shadow: 0 0 13px rgba(0, 0, 0, .15);
       justify-content: center;
       display: flex;
       left: -100%;
-      transition: 0.8s;
+      transition: 0.5s;
       opacity: 0;
       
       .menu {
@@ -243,7 +245,49 @@
       left: 0;
       opacity: 1;
       box-shadow: 0 0 13px rgba(0, 0, 0, .15);
-      height: 100vh
+      height: 100vh;
+      z-index: 15;
+   }
+   
+   .iframes {
+      border: 1px solid pink;
+      max-width: 100%;
+      height: 100vh;
+      position: relative;
+      top: 45px;
+      z-index: 1;
+      overflow-x: auto;
+      overflow-y: hidden;
+      
+      .animate-change {
+         transition: width 1.5s ease, height 1.5s ease;
+      }
+      
+      .coverIframes {
+         width: max-content;
+         height: max-content;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 5px;
+         background-color: #F7F8F8;
+         border: none;
+         transform: scale(0.25);
+         transform-origin: 0 0;
+         margin-left: 15px;
+         margin-top: 15px;
+         
+         .viewPortIframe {
+            border: none;
+            margin: 13px;
+            border: none;
+            background: white;
+            /*transform: scale(0.25);
+            transform-origin: 0 0;*/
+            width: 320px;
+            height: 568px;
+         }
+      }
    }
    
    /* .container {
