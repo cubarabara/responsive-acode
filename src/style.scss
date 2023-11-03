@@ -78,7 +78,7 @@
       .hamburgerMenu:checked:after {
          transform: rotate(-45deg);
       }
-      
+
       .hamburgerMenu:focus-visible {
          clip-path: none;
          -webkit-mask: none;
