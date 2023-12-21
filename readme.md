@@ -12,6 +12,8 @@ Description: This tool makes it easier for you to build a Responsive website
 ### Support me
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/cubarabara)
 
+# [Repository](https://github.com/cubarabara/responsive-acode)
+
 ## **Preview**
 <video src="https://github.com/cubarabara/Responsive-tools-acode/assets/36744420/4665e363-493c-4be0-9f25-8cc263b24603" height="270" width="340" controls></video>
 
@@ -30,4 +32,5 @@ Description: This tool makes it easier for you to build a Responsive website
 ## Fix
 * List menu
 
-**Bug report:** if you find a bug [here!](https://github.com/cubarabara/Responsive-tools-acode)
+## Fix
+* List menu
