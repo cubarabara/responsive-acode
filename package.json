@@ -1,39 +1,39 @@
 {
-   "name": "responsive-tools",
-   "version": "2.2.0",
-   "description": "This tool makes it easier for you to build a Responsive website",
-   "main": "dist/main.js",
-   "repository": "https://github.com/cubarabara/responsive-acode",
-   "author": "cubarabara@gmail.com",
-   "license": "MIT",
-   "devDependencies": {
-      "@babel/cli": "^7.18.10",
-      "@babel/core": "^7.18.13",
-      "@babel/plugin-transform-runtime": "^7.19.6",
-      "@babel/preset-env": "^7.18.10",
-      "autoprefixer": "^10.4.15",
-      "babel-loader": "^9.1.0",
-      "html-tag-js": "^1.1.41",
-      "jszip": "^3.10.1",
-      "live-server": "^1.2.2",
-      "pinch-zoom-js": "^2.3.5",
-      "postcss-loader": "^7.3.3",
-      "raw-loader": "^4.0.2",
-      "sass": "^1.65.1",
-      "sass-loader": "^13.3.2",
-      "webpack": "^5.76.0",
-      "webpack-cli": "^5.0.0"
-   },
-   "scripts": {
-      "build": "webpack",
-      "build-release": "webpack --mode production",
-      "start-dev": "node .vscode/start-dev"
-   },
-   "browserslist": [
-      "> 0.25%, not dead"
-   ],
-   "resolutions": {
-      "terser": ">=5.14.2 ",
-      "glob-parent": ">=5.1.2"
-   }
+  "name": "responsive-tools",
+  "version": "2.2.0",
+  "description": "This tool makes it easier for you to build a Responsive website",
+  "main": "dist/main.js",
+  "repository": "https://github.com/cubarabara/responsive-acode",
+  "author": "cubarabara@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.13",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.18.10",
+    "autoprefixer": "^10.4.15",
+    "babel-loader": "^9.1.0",
+    "html-tag-js": "^1.1.41",
+    "jszip": "^3.10.1",
+    "live-server": "^1.2.2",
+    "pinch-zoom-js": "^2.3.5",
+    "postcss-loader": "^7.3.3",
+    "raw-loader": "^4.0.2",
+    "sass": "^1.65.1",
+    "sass-loader": "^13.3.2",
+    "webpack": "^5.76.0",
+    "webpack-cli": "^5.0.0"
+  },
+  "scripts": {
+    "build": "webpack",
+    "build-release": "webpack --mode production",
+    "start-dev": "node .vscode/start-dev"
+  },
+  "browserslist": [
+    "> 0.25%, not dead"
+  ],
+  "resolutions": {
+    "terser": ">=5.14.2 ",
+    "glob-parent": ">=5.1.2"
+  }
 }
