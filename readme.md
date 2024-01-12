@@ -1,6 +1,3 @@
-## **Responsive**
-Description: This tool makes it easier for you to build a Responsive website 
-
 ## **How to use it?**
 ```
 1. Hold in editor text "Debug".
@@ -8,6 +5,9 @@ Description: This tool makes it easier for you to build a Responsive website
 3. Crtl-T.
 4. open command pallete Search "Responsive".
 ```
+
+## **Description**
+This tool makes it easier for you to build a Responsive website 
 
 ### Support me
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/cubarabara)
