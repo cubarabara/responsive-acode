@@ -19,7 +19,7 @@ This tool makes it easier for you to build a Responsive website
 * support node.js
 - **New update:** device type and viewport information
 
-![](asset/Video1.mp4)
 ![](asset/Photo1.png)
 ![](asset/Photo2.png)
+![](asset/Photo3.png)
 
