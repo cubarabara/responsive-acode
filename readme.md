@@ -19,6 +19,8 @@ This tool makes it easier for you to build a Responsive website
 * support node.js
 - **New update:** device type and viewport information
 
+<img src="https://github.com/cubarabara/responsive-acode/blob/main/asset/Photo1.png" /><img src="https://github.com/cubarabara/responsive-acode/blob/main/asset/Photo1.png" />
+
 ![](https://github.com/cubarabara/responsive-acode/blob/main/asset/Photo1.png)
 ![](https://github.com/cubarabara/responsive-acode/blob/main/asset/Photo2.png)
 ![](https://github.com/cubarabara/responsive-acode/blob/main/asset/Photo3.png)
