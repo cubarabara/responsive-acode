@@ -17,4 +17,9 @@ This tool makes it easier for you to build a Responsive website
 ## Feature
 * zoom in and zoom out
 * support node.js
-- **New update:** device type and viewport information 
+- **New update:** device type and viewport information
+
+![](asset/Video1.mp4)
+![](asset/Photo1.png)
+![](asset/Photo2.png)
+
