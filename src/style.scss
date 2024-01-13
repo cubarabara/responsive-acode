@@ -130,7 +130,7 @@
           color: #bfbfbf;
         }
         
-        .btnApply {
+        .button-apply {
           background: #02B4DB;
           border: none;
           width: 150px;
@@ -141,6 +141,7 @@
           font-weight: bold;
           margin-top: 15px;
           margin-bottom: 10px;
+          color: #fff;
         }
       }
       
@@ -241,6 +242,7 @@
       
       .dropdown.active>.label>.expand_more {
         transform: rotate(180deg);
+      }
     }
   }
   
@@ -251,6 +253,27 @@
     box-shadow: 0 0 13px rgba(0, 0, 0, .15);
     height: 100vh;
     z-index: 15;
+  }
+  
+  .information {
+    margin-top: 5px;
+    margin-left: 15px;
+    // position: absolute;
+    // top: 40px;
+  }
+  
+  h1 {
+    color: #555;
+  }
+  
+  .device-information {
+    font-weight: bold;
+    font-family: Sans-Serif;
+    font-size: 15px;
+  }
+  
+  .width-information {
+    font-size: 5px;
   }
   
   .iframes {
@@ -279,15 +302,13 @@
       transform: scale(0.25);
       transform-origin: 0 0;
       margin-left: 15px;
-      margin-top: 15px;
+      margin-top: 10px;
       
       .viewPortIframe {
         border: none;
         margin: 13px;
         border: none;
         background: white;
-        /*transform: scale(0.25);
-            transform-origin: 0 0;*/
         width: 320px;
         height: 568px;
       }

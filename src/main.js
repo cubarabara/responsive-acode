@@ -14,7 +14,7 @@ class AcodePlugin {
     selectionMenu.add(this.run.bind(this), 'Dubug', 'all');
     // editorManager.
     editorManager.editor.commands.addCommand({
-      name: "test1",
+      name: "Responsive",
       description: "Responsive",
       bindKey: {
         win: "Ctrl-T"
@@ -74,7 +74,7 @@ class AcodePlugin {
                 id: 'height',
               }),
               tag('button', {
-                className: 'btnApply',
+                className: 'button-apply',
                 textContent: 'Apply',
               }),
             ],
@@ -842,6 +842,22 @@ class AcodePlugin {
         ],
       }),
     });
+    
+    this.$information = tag('div', {
+      className: "information",
+      children: [
+        tag('h1', {
+          id: "deviceInformation",
+          className: "device-information",
+          textContent: "iPhone 5"
+        }),
+        tag('h1', {
+          id: "widthInformation",
+          className: "width-information",
+          textContent: "320px 568px"
+        }),
+      ]
+    });
 
     this.$iframes = tag('div', {
       className: "iframes",
@@ -856,7 +872,9 @@ class AcodePlugin {
     document.head.append(this.$style);
     this.$page.append(this.$navbar);
     this.$page.append(this.$menuSlide);
-
+    
+    this.$iframes.append(this.$information);
+    
     this.$page.append(this.$iframes);
     this.$iframes.append(this.$coverIframes);
     this.$coverIframes.append(this.$viewPortIframe);
@@ -916,7 +934,7 @@ class AcodePlugin {
     /*Custom Screen */
     const customWidth = $page.querySelector(".input-width");
     const customHeight = $page.querySelector(".input-height");
-    $page.querySelector(".btnApply").addEventListener("click", () => {
+    $page.querySelector(".button-apply").addEventListener("click", () => {
       if (customWidth.value.trim() === "" || customHeight.value.trim() === "") {
         window.toast('Width and Height cannot be empty', 3000);
       } else {
@@ -926,11 +944,14 @@ class AcodePlugin {
         dropDown.forEach(removeDropDown => {
           removeDropDown.classList.remove('active');
         });
-
+        
         // set width and height
         this.$viewPortIframe.style.width = customWidth.value + 'px';
         this.$viewPortIframe.style.height = customHeight.value + 'px';
-
+        
+        $page.querySelector(".device-information").innerHTML = 'Custom';
+        $page.querySelector(".width-information").innerHTML = customWidth.value + 'px' + ' ' + customHeight.value + 'px';
+        
         // Clear the values after successful execution
         customWidth.value = "";
         customHeight.value = "";
@@ -939,7 +960,6 @@ class AcodePlugin {
 
     // iphone mobile
     $page.querySelector("[id='320x568iphone5']").addEventListener("click", () => {
-
       // remove menu slide
       toggelMenu.checked = false;
       menuSlide.classList.remove('active');
@@ -949,10 +969,12 @@ class AcodePlugin {
       });
       this.$viewPortIframe.classList.add('animate-change');
 
-      // set width and height
+      // set width and height 
       this.$viewPortIframe.style.width = '320px';
       this.$viewPortIframe.style.height = '568px';
-      console.log("this iphone 5");
+      
+      $page.querySelector(".device-information").innerHTML = 'iPhone 5';
+      $page.querySelector(".width-information").innerHTML = '320px 568px';
     });
     $page.querySelector("[id='375x667iphone6/6s']").addEventListener("click", () => {
       // remove menu slide
@@ -967,7 +989,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '375px';
       this.$viewPortIframe.style.height = '667px';
-      console.log("this iphone 6");
+      
+      $page.querySelector(".device-information").innerHTML = 'iPhone 6/6s';
+      $page.querySelector(".width-information").innerHTML = '320px 667px';
     });
     $page.querySelector("[id='414x736iphone6plus/6splus']").addEventListener("click", () => {
       // remove menu slide
@@ -980,6 +1004,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '414px';
       this.$viewPortIframe.style.height = '736px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPhone 6 plus / 6s plus';
+      $page.querySelector(".width-information").innerHTML = '4140x 736px';
     });
     $page.querySelector("[id='375x667iphone7']").addEventListener("click", () => {
       // remove menu slide
@@ -992,6 +1019,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '375px';
       this.$viewPortIframe.style.height = '667px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPhone 7';
+      $page.querySelector(".width-information").innerHTML = '375px 667px';
     });
     $page.querySelector("[id='414x736iphone7plus']").addEventListener("click", () => {
       // remove menu slide
@@ -1004,6 +1034,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '414px';
       this.$viewPortIframe.style.height = '736px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPhone 7 Plus';
+      $page.querySelector(".width-information").innerHTML = '414px 732px';
     });
     $page.querySelector("[id='375x667iphonehone8']").addEventListener("click", () => {
       // remove menu slide
@@ -1016,6 +1049,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '375px';
       this.$viewPortIframe.style.height = '667px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPhone 8';
+      $page.querySelector(".width-information").innerHTML = '375px 667px';
     });
     $page.querySelector("[id='414x736iphone8plus']").addEventListener("click", () => {
       // remove menu slide
@@ -1028,6 +1064,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '414px';
       this.$viewPortIframe.style.height = '736px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPhone 8 Plus';
+      $page.querySelector(".width-information").innerHTML = '414px 736px';
     });
     $page.querySelector("[id='375x812iphonex']").addEventListener("click", () => {
       // remove menu slide
@@ -1040,6 +1079,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '375px';
       this.$viewPortIframe.style.height = '812px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPhone X';
+      $page.querySelector(".width-information").innerHTML = '375px 812px';
     });
     $page.querySelector("[id='414x896iphonexsmax']").addEventListener("click", () => {
       // remove menu slide
@@ -1052,6 +1094,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '414px';
       this.$viewPortIframe.style.height = '896px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPhone xs max';
+      $page.querySelector(".width-information").innerHTML = '414px 896px';
     });
     $page.querySelector("[id='375x812iphonexs'").addEventListener("click", () => {
       // remove menu slide
@@ -1064,6 +1109,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '375px';
       this.$viewPortIframe.style.height = '812px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPhone xs';
+      $page.querySelector(".width-information").innerHTML = '375px 812px';
     });
     $page.querySelector("[id='414x896iphonexr']").addEventListener("click", () => {
       // remove menu slide
@@ -1076,6 +1124,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '414px';
       this.$viewPortIframe.style.height = '896px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPhone XR';
+      $page.querySelector(".width-information").innerHTML = '414px 896px';
     });
 
     // samsung mobile
@@ -1090,6 +1141,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '360px';
       this.$viewPortIframe.style.height = '640px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Samsung Galaxy S7';
+      $page.querySelector(".width-information").innerHTML = '320px 640px';
     });
     $page.querySelector("[id='360x640samsunggalaxys7edge']").addEventListener("click", () => {
       // remove menu slide
@@ -1102,6 +1156,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '360px';
       this.$viewPortIframe.style.height = '640px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Samsung Galaxy S6 Edge';
+      $page.querySelector(".width-information").innerHTML = '360px 640px';
     });
     $page.querySelector("[id='360x740samsunggalaxys8']").addEventListener("click", () => {
       // remove menu slide
@@ -1114,6 +1171,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '360px';
       this.$viewPortIframe.style.height = '740px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Samsung Galaxy S8';
+      $page.querySelector(".width-information").innerHTML = '360px 740px';
     });
     $page.querySelector("[id='360x740samsunggalaxys8+']").addEventListener("click", () => {
       // remove menu slide
@@ -1126,6 +1186,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '360px';
       this.$viewPortIframe.style.height = '760px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Samsung Galaxy S8+';
+      $page.querySelector(".width-information").innerHTML = '360px 760px';
     });
     $page.querySelector("[id='360x740samsunggalaxys9']").addEventListener("click", () => {
       // remove menu slide
@@ -1138,6 +1201,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '360px';
       this.$viewPortIframe.style.height = '740px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Samsung Galaxy S9';
+      $page.querySelector(".width-information").innerHTML = '360px 740px';
     });
     $page.querySelector("[id='360x740samsunggalaxys9+']").addEventListener("click", () => {
       // remove menu slide
@@ -1150,6 +1216,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '360px';
       this.$viewPortIframe.style.height = '740px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Samsung Galaxy S9+';
+      $page.querySelector(".width-information").innerHTML = '320px 740px';
     });
     $page.querySelector("[id='480x853samsunggalaxynote5']").addEventListener("click", () => {
       // remove menu slide
@@ -1162,6 +1231,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '480px';
       this.$viewPortIframe.style.height = '853px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Samsung Galaxy Note 5';
+      $page.querySelector(".width-information").innerHTML = '480px 853px';
     });
     $page.querySelector("[id='360x740samsunggalaxynote9']").addEventListener("click", () => {
       // remove menu slide
@@ -1174,6 +1246,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '360px';
       this.$viewPortIframe.style.height = '740px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Samsung Galaxy Note 9';
+      $page.querySelector(".width-information").innerHTML = '360px 740px';
     });
 
     // One Plus mobile
@@ -1188,6 +1263,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '480px';
       this.$viewPortIframe.style.height = '853px';
+      
+      $page.querySelector(".device-information").innerHTML = 'One Plus 3';
+      $page.querySelector(".width-information").innerHTML = '480px 853px';
     });
 
     // LG mobile
@@ -1202,6 +1280,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '480px';
       this.$viewPortIframe.style.height = '853px';
+      
+      $page.querySelector(".device-information").innerHTML = 'LG G5';
+      $page.querySelector(".width-information").innerHTML = '480px 853px';
     });
 
     // Google Pixel mobile
@@ -1216,6 +1297,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '412px';
       this.$viewPortIframe.style.height = '732px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Google Pixel';
+      $page.querySelector(".width-information").innerHTML = '412px 732px';
     });
     $page.querySelector("[id='412x732googlepixelxl']").addEventListener("click", () => {
       // remove menu slide
@@ -1228,6 +1312,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '412px';
       this.$viewPortIframe.style.height = '732px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Google Pixel XL';
+      $page.querySelector(".width-information").innerHTML = '412px 732px';
     });
     $page.querySelector("[id='412x732googlepixel2xl']").addEventListener("click", () => {
       // remove menu slide
@@ -1240,6 +1327,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '412px';
       this.$viewPortIframe.style.height = '732px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Google Pixel 2 XL';
+      $page.querySelector(".width-information").innerHTML = '412px 732px';
     });
     $page.querySelector("[id='412x824googlepixel3']").addEventListener("click", () => {
       // remove menu slide
@@ -1252,6 +1342,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '412px';
       this.$viewPortIframe.style.height = '824px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Google Pixel 3';
+      $page.querySelector(".width-information").innerHTML = '412px 824px';
     });
     $page.querySelector("[id='412x847googlepixel3xl']").addEventListener("click", () => {
       // remove menu slide
@@ -1264,6 +1357,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '412px';
       this.$viewPortIframe.style.height = '847px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Google Pixel 3 xl';
+      $page.querySelector(".width-information").innerHTML = '412px 847px';
     });
 
     // Nexus mobile
@@ -1278,6 +1374,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '412px';
       this.$viewPortIframe.style.height = '732px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Nexus 568px';
+      $page.querySelector(".width-information").innerHTML = '412px 732px';
     });
     $page.querySelector("[id='412x732nexus6p']").addEventListener("click", () => {
       // remove menu slide
@@ -1290,6 +1389,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '412px';
       this.$viewPortIframe.style.height = '732px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Nexus 6P';
+      $page.querySelector(".width-information").innerHTML = '412px 732px';
     });
 
     // Xiaomi mobile
@@ -1304,6 +1406,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '360px';
       this.$viewPortIframe.style.height = '640px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Xiaomi Redmi 4X/4';
+      $page.querySelector(".width-information").innerHTML = '360px 640px';
     });
     $page.querySelector("[id='360x640xiaomiredminote3']").addEventListener("click", () => {
       // remove menu slide
@@ -1316,6 +1421,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '360px';
       this.$viewPortIframe.style.height = '640px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Xiaomi Redmi Note 3';
+      $page.querySelector(".width-information").innerHTML = '360px 640px';
     });
     $page.querySelector("[id='360x640xiaomiredminote4']").addEventListener("click", () => {
       // remove menu slide
@@ -1328,6 +1436,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '360px';
       this.$viewPortIframe.style.height = '640px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Xiaomi Redmi Note 4';
+      $page.querySelector(".width-information").innerHTML = '360px 640px';
     });
     $page.querySelector("[id='393x786xiaomiredminote5']").addEventListener("click", () => {
       // remove menu slide
@@ -1340,6 +1451,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '393px';
       this.$viewPortIframe.style.height = '786px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Xiaomi Redmi Note 5';
+      $page.querySelector(".width-information").innerHTML = '393px 786px';
     });
 
     // ipad
@@ -1354,6 +1468,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '768px';
       this.$viewPortIframe.style.height = '1024px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPad Mini';
+      $page.querySelector(".width-information").innerHTML = '768px 1024px';
     });
     $page.querySelector("[id='IpadMini2and3768x1024']").addEventListener("click", () => {
       // remove menu slide
@@ -1366,6 +1483,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '768px';
       this.$viewPortIframe.style.height = '1024px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPad Mini 2 & 3';
+      $page.querySelector(".width-information").innerHTML = '768px 1024px';
     });
     $page.querySelector("[id='iPadAir1And2768x1024']").addEventListener("click", () => {
       // remove menu slide
@@ -1378,6 +1498,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '768px';
       this.$viewPortIframe.style.height = '1024px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPad Air 1 & 2';
+      $page.querySelector(".width-information").innerHTML = '768px 1024px';
     });
     $page.querySelector("[id='iPadThirdAndFourthGeneration768x1024']").addEventListener("click", () => {
       // remove menu slide
@@ -1390,6 +1513,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '768px';
       this.$viewPortIframe.style.height = '1024px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Ipad Third & Fourth Generation';
+      $page.querySelector(".width-information").innerHTML = '768px 1024px';
     });
     $page.querySelector("[id='iPadPro1024x1366']").addEventListener("click", () => {
       // remove menu slide
@@ -1402,6 +1528,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '1024px';
       this.$viewPortIframe.style.height = '1366px';
+      
+      $page.querySelector(".device-information").innerHTML = 'iPad Pro';
+      $page.querySelector(".width-information").innerHTML = '1024px 1366px';
     });
 
     // nexus ipad
@@ -1416,6 +1545,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '600px';
       this.$viewPortIframe.style.height = '960px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Nexus 7 (2013)';
+      $page.querySelector(".width-information").innerHTML = '600px 960px';
     });
     $page.querySelector("[id='Nexus9and768x1024']").addEventListener("click", () => {
       // remove menu slide
@@ -1428,6 +1560,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '768px';
       this.$viewPortIframe.style.height = '1024px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Nexus 9';
+      $page.querySelector(".width-information").innerHTML = '768px 1024px';
     });
 
     // samsung ipad
@@ -1442,6 +1577,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '800px';
       this.$viewPortIframe.style.height = '1280px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Samsung Galaxy Tab 10';
+      $page.querySelector(".width-information").innerHTML = '800px 1280px';
     });
 
     // Chromebook ipad
@@ -1456,6 +1594,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '1280px';
       this.$viewPortIframe.style.height = '850px';
+      
+      $page.querySelector(".device-information").innerHTML = 'Chromebook Pixel';
+      $page.querySelector(".width-information").innerHTML = '1280px 850px';
     });
 
     // Desktop
@@ -1464,10 +1605,13 @@ class AcodePlugin {
       toggelMenu.checked = false;
       menuSlide.classList.remove('active');
       this.$viewPortIframe.classList.add('animate-change');
-
+      
       // set width and height
       this.$viewPortIframe.style.width = '1024px';
       this.$viewPortIframe.style.height = '600px';
+      
+      $page.querySelector(".device-information").innerHTML = '10 Notebook';
+      $page.querySelector(".width-information").innerHTML = '1024px 600px';
     });
     $page.querySelector("[id='12Netbook1024x768']").addEventListener("click", () => {
       // remove menu slide
@@ -1477,6 +1621,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '1024px';
       this.$viewPortIframe.style.height = '768px';
+      
+      $page.querySelector(".device-information").innerHTML = '12 Notebook';
+      $page.querySelector(".width-information").innerHTML = '1280px 768px';
     });
     $page.querySelector("[id='13Notebook1280x800").addEventListener("click", () => {
       // remove menu slide
@@ -1485,6 +1632,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '1280px';
       this.$viewPortIframe.style.height = '800px';
+      
+      $page.querySelector(".device-information").innerHTML = '13 Notebook';
+      $page.querySelector(".width-information").innerHTML = '1280px 800px';
     });
     $page.querySelector("[id='15Notebook1366x768']").addEventListener("click", () => {
       // remove menu slide
@@ -1493,6 +1643,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '1366px';
       this.$viewPortIframe.style.height = '768px';
+      
+      $page.querySelector(".device-information").innerHTML = '15 Notebook';
+      $page.querySelector(".width-information").innerHTML = '1366px 768px';
     });
     $page.querySelector("[id='19Desktop1440x900']").addEventListener("click", () => {
       // remove menu slide
@@ -1501,6 +1654,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '1440px';
       this.$viewPortIframe.style.height = '768px';
+      
+      $page.querySelector(".device-information").innerHTML = '19 Desktop';
+      $page.querySelector(".width-information").innerHTML = '1440px 768px';
     });
     $page.querySelector("[id='20Desktop1600x900']").addEventListener("click", () => {
       // remove menu slide
@@ -1509,6 +1665,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '1600px';
       this.$viewPortIframe.style.height = '900px';
+      
+      $page.querySelector(".device-information").innerHTML = '20 Desktop';
+      $page.querySelector(".width-information").innerHTML = '1600px 900px';
     });
     $page.querySelector("[id='22Desktop1680x1050']").addEventListener("click", () => {
       // remove menu slide
@@ -1517,6 +1676,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '1680px';
       this.$viewPortIframe.style.height = '1050px';
+      
+      $page.querySelector(".device-information").innerHTML = '22 Desktop';
+      $page.querySelector(".width-information").innerHTML = '1680px 1050px';
     });
     $page.querySelector("[id='23Desktop1920x1080']").addEventListener("click", () => {
       // remove menu slide
@@ -1525,6 +1687,9 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '1920px';
       this.$viewPortIframe.style.height = '1080px';
+      
+      $page.querySelector(".device-information").innerHTML = '23 Desktop';
+      $page.querySelector(".width-information").innerHTML = '1920px 1080px';
     });
     $page.querySelector("[id='24Desktop1980x1200']").addEventListener("click", () => {
       // remove menu slide
@@ -1533,8 +1698,10 @@ class AcodePlugin {
       // set width and height
       this.$viewPortIframe.style.width = '1980px';
       this.$viewPortIframe.style.height = '1200px';
+      
+      $page.querySelector(".device-information").innerHTML = '24 Desktop';
+      $page.querySelector(".width-information").innerHTML = '1980px 1200px';
     });
-
   }
 
   async run() {
@@ -1547,7 +1714,6 @@ class AcodePlugin {
       this.$page.show();
       document.querySelector("[name='viewport']").setAttribute("content", "width=1024, height=768");
       this.$viewPortIframe.src = result;
-      console.log(result);
     }
   }
 
