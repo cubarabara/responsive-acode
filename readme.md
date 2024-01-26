@@ -9,7 +9,7 @@
 ## **Description**
 This tool makes it easier for you to build a Responsive website 
 
-### Support me
+to pay for internet 👇
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/cubarabara)
 
 # [Repository](https://github.com/cubarabara/responsive-acode)
